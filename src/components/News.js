@@ -31,10 +31,11 @@ export class News extends Component {
         let data = await fetch(url);
         let parsedData = await data.json()
         console.log(JSON.stringify(parsedData, null, 2));
-
+        setTimeout(() => {
         this.setState({articles: parsedData.articles,
           totalResults: parsedData.totalResults,
-          loading: false})
+          loading: false});
+        }, 2000);
   }
 
    handlePrevClick = async ()=>{
